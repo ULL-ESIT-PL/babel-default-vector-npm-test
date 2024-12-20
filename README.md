@@ -1,15 +1,19 @@
 ## What is this?
 
-This is a repo illustrating how to use 
-Pablo Santana's set of packages [published in the GitHub registry](https://github.com/orgs/ULL-ESIT-PL/packages) inside the [ull-esit-pl](https://github.com/ULL-ESIT-PL/) organization. These packages extend the JavaScript language with a new kind of functions. The packages are:
+> [!CAUTION]
+> This is a work in progress. The syntax and the semantic of the proposed extension to JavaScript are not yet fully defined. The packages are published in the GitHub registry, but they are not yet ready for production.
 
-- The JS parser modified: [@ull-esit-pl/parser-left-side](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/parser-left-side)
-- The AST transformation plugin: [@ull-esit-pl/babel-plugin-left-side-plugin ](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/babel-plugin-left-side-plugin) 
-- The support library: [@ull-esit-pl/babel-plugin-left-side-support](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/babel-plugin-left-side-support) 
+
+This is a repo illustrating how to use 
+Adrian Mora's set of packages [published in the GitHub registry](https://github.com/orgs/ULL-ESIT-PL/packages) inside the [ull-esit-pl](https://github.com/ULL-ESIT-PL/) organization. These packages extend the JavaScript language with a new kind of functions. The packages are:
+
+- The JS parser modified: [@ull-esit-pl/parser-default-vector](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/parser-default-vector)
+- The AST transformation plugin: [@ull-esit-pl/babel-plugin-default-vector](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/babel-plugin-default-vector) 
+
 
 ### The proposed Syntax and Semantic
 
-These packages extend JS  with a new kind of functions, the `@@` functions (we lack of a name for this class of functions: *assignable*? *pure*?). Here is an example of declaring an *assignable* function:
+These packages extend JS  with a new syntax for arrays. And in the future also for Objects. Here is an example of such syntax:
 
 ```js 
 function @@ foo(bar) {
@@ -23,7 +27,7 @@ These *assignable* functions can be later modified  using the assign expression:
 foo(10) = 5;
 ```
 
-Here is the full code for our "hello" left-side-plugin example:
+Here is the full code for our "hello" default-vector-plugin example:
 
 `➜  babel-npm-test git:(main) cat example.js`
 ```js
@@ -36,7 +40,7 @@ console.log(foo(10)); //  5
 console.log(foo(5));  // 10
 ```
 
-Testing Pablo Santana's [@ull-esit-pl/parser-left-side](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/parser-left-side) set of packages [published in the GitHub registry](https://github.com/orgs/ULL-ESIT-PL/packages) inside the [ull-esit-pl](https://github.com/ULL-ESIT-PL/) organization.
+Testing Adrian Mora's [@ull-esit-pl/parser-default-vector](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/parser-default-vector) set of packages [published in the GitHub registry](https://github.com/orgs/ULL-ESIT-PL/packages) inside the [ull-esit-pl](https://github.com/ULL-ESIT-PL/) organization.
 
 
 
@@ -70,7 +74,7 @@ or set an entry `registry` in your `package.json` file:
 Then you can proceed to install the packages:
 
 ```
-npm i -D @babel/cli@7.10 @ull-esit-pl/babel-plugin-left-side-plugin @ull-esit-pl/babel-plugin-left-side-support @ull-esit-pl/parser-left-side 
+npm i -D @babel/cli@7.10 @ull-esit-pl/babel-plugin-default-vector-plugin @ull-esit-pl/babel-plugin-default-vector-support @ull-esit-pl/parser-default-vector 
 ```
 
 Your package.json `devDependencies` section will look similar to this:
@@ -79,9 +83,9 @@ Your package.json `devDependencies` section will look similar to this:
 ```json
 {
   "@babel/cli": "^7.10.1",
-  "@ull-esit-pl/babel-plugin-left-side-plugin": "^1.0.1",
-  "@ull-esit-pl/babel-plugin-left-side-support": "^1.0.0",
-  "@ull-esit-pl/parser-left-side": "^1.0.0"
+  "@ull-esit-pl/babel-plugin-default-vector-plugin": "^1.0.1",
+  "@ull-esit-pl/babel-plugin-default-vector-support": "^1.0.0",
+  "@ull-esit-pl/parser-default-vector": "^1.0.0"
 }
 ```
 
@@ -94,7 +98,7 @@ To compile the example above add a `babel.config.js` to your workspace folder:
 ```js
 module.exports = {
   "plugins": [
-    "@ull-esit-pl/babel-plugin-left-side-plugin"
+    "@ull-esit-pl/babel-plugin-default-vector-plugin"
   ],
 }
 ```
@@ -110,7 +114,7 @@ This will output the compiled code to the console:
 const {
   assign,
   functionObject
-} = require("@ull-esit-pl/babel-plugin-left-side-support");
+} = require("@ull-esit-pl/babel-plugin-default-vector-support");
 const foo = functionObject(function (bar) {
   return bar * 2;
 });
@@ -134,22 +138,22 @@ You can pipe the output to `node`:
 or alternatively, use the `-o` option to save the output to a file and then run it:
 
 ```
-➜  babel-left-side-npm-test git:(main) npx babel  example.js -o example.cjs
-➜  babel-left-side-npm-test git:(main) ✗ node example.cjs 
+➜  babel-default-vector-npm-test git:(main) npx babel  example.js -o example.cjs
+➜  babel-default-vector-npm-test git:(main) ✗ node example.cjs 
 5
 10
 ```
 
 ## References
 
-- The actual code implementation: https://github.com/ULL-ESIT-PL/babel-tanhauhau/tree/pablo-tfg
+- The actual code implementation: https://github.com/ULL-ESIT-PL/babel-tanhauhau/tree/Adrian-tfg
 - Our tutorial on babel: https://github.com/ULL-ESIT-PL/babel-learning/tree/main
 - Some internal information: https://github.com/ULL-ESIT-PL/beca-colaboracion/tree/main
 
 ## TODO
 
 -  README.md is the one babel has. It has to change to be specific about the extension for the three packages,
--  Add `-D` to all install instructions and remove the version number: `npm install @ull-esit-pl/babel-plugin-left-side-plugin -D`
+-  Add `-D` to all install instructions and remove the version number: `npm install @ull-esit-pl/babel-plugin-default-vector-plugin -D`
 -  Do we need two separated packages for the plugin and the support? Can we have a single package?
 
 ## License
