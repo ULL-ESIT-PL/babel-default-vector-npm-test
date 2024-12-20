@@ -1,5 +1,5 @@
 module.exports = {
   "plugins": [
-    "@ull-esit-pl/babel-plugin-left-side-plugin"
+    "@ull-esit-pl/babel-plugin-default-vector"
   ],
 }

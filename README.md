@@ -13,7 +13,7 @@ Adrian Mora's set of packages [published in the GitHub registry](https://github.
 
 ### The proposed Syntax and Semantic
 
-These packages extend JS  with a new syntax for arrays. And in the future also for Objects. Here is an example of such syntax:
+These packages extend JS  with a new syntax for arrays. And in the future the syntax will be extended  for Objects. Here is an example of such syntax:
 
 ```js 
 function @@ foo(bar) {
