@@ -1,7 +1,8 @@
 ## What is this?
 
 > [!CAUTION]
-> This is a work in progress. The syntax and the semantic of the proposed extension to JavaScript are not yet fully defined. The packages are published in the GitHub registry, but they are not yet ready for production.
+> This is a work in progress. The syntax and the semantic of the proposed extension to JavaScript are not yet fully defined. The packages are published in the GitHub registry, but they are not yet ready for production. 
+> The current version is not working. 
 
 
 This is a repo illustrating how to use 
@@ -126,6 +127,9 @@ or alternatively, use the `-o` option to save the output to a file and then run 
 - The actual code implementation: https://github.com/ULL-ESIT-PL/babel-tanhauhau/tree/Adrian-tfg
 - Our tutorial on babel: https://github.com/ULL-ESIT-PL/babel-learning/tree/main
 - Some internal information: https://github.com/ULL-ESIT-PL/beca-colaboracion/tree/main
+- First steps on publishing a Babel package: https://github.com/ULL-ESIT-PL/babel-learning/blob/main/doc/building-publishing.md#how-to-publish-from-a-fork-of-babel
+- Another description of our attempts to define the syntax and semantics of the array else clause: https://github.com/ULL-ESIT-PL/babel-learning/tree/main/src/array-else
+
 
 ## TODO
 
