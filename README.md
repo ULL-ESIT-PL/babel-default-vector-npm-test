@@ -16,33 +16,11 @@ Adrian Mora's set of packages [published in the GitHub registry](https://github.
 These packages extend JS  with a new syntax for arrays. And in the future the syntax will be extended  for Objects. Here is an example of such syntax:
 
 ```js 
-function @@ foo(bar) {
-  return bar * 2;
-}
+let a = [1, 2, 3, else x => x * x];
+
+console.log(a[2]);  // 3
+console.log(a[5]);  // 25 (since 5 * 5 = 25)
 ```
-
-These *assignable* functions can be later modified  using the assign expression:
-
-```js
-foo(10) = 5;
-```
-
-Here is the full code for our "hello" default-vector-plugin example:
-
-`➜  babel-npm-test git:(main) cat example.js`
-```js
-function @@ foo(bar) {
-  return bar * 2;
-}
-foo(10) = 5;
-
-console.log(foo(10)); //  5
-console.log(foo(5));  // 10
-```
-
-Testing Adrian Mora's [@ull-esit-pl/parser-default-vector](https://github.com/orgs/ULL-ESIT-PL/packages/npm/package/parser-default-vector) set of packages [published in the GitHub registry](https://github.com/orgs/ULL-ESIT-PL/packages) inside the [ull-esit-pl](https://github.com/ULL-ESIT-PL/) organization.
-
-
 
 
 ## Install
@@ -60,14 +38,14 @@ These packages use the GitHub registry instead of the npm registry. Therefore, r
 to set the registry entry in your `.npmrc` file:
 
 ```bash
-➜  babel-npm-test git:(main) ✗ cat ~/.npmrc | grep '@ull-esit-pl:'
+➜  babel-default-vector-npm-test git:(main) ✗ cat ~/.npmrc | grep '@ull-esit-pl:'
 @ull-esit-pl:registry=https://npm.pkg.github.com
 ```
 
 or set an entry `registry` in your `package.json` file:
 
 ```bash
-➜  babel-npm-test git:(main) ✗ jq '.registry' package.json 
+➜  babel-default-vector-npm-test git:(main) ✗ jq '.registry' package.json 
 "https://npm.pkg.github.com"
 ```
 
@@ -79,13 +57,12 @@ npm i -D @babel/cli@7.10 @ull-esit-pl/babel-plugin-default-vector-plugin @ull-es
 
 Your package.json `devDependencies` section will look similar to this:
 
-`➜  babel-npm-test jq '.devDependencies' package.json`
+`➜  babel-default-vector-npm-test git:(main) ✗ jq '.devDependencies' package.json`
 ```json
 {
   "@babel/cli": "^7.10.1",
-  "@ull-esit-pl/babel-plugin-default-vector-plugin": "^1.0.1",
-  "@ull-esit-pl/babel-plugin-default-vector-support": "^1.0.0",
-  "@ull-esit-pl/parser-default-vector": "^1.0.0"
+  "@ull-esit-pl/babel-plugin-default-vector": "latest",
+  "@ull-esit-pl/parser-default-vector": "latest"
 }
 ```
 
