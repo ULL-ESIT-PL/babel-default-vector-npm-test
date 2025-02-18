@@ -84,21 +84,17 @@ module.exports = {
 and then compile it using the installed packages:
 
 ```js
-➜  babel-npm-test npx babel  example.js
+➜  babel-default-vector-npm-test git:(main) ✗ npx babel  example.js
 ```
 This will output the compiled code to the console:
 
 ```bash                                                      
 const {
-  assign,
-  functionObject
-} = require("@ull-esit-pl/babel-plugin-default-vector-support");
-const foo = functionObject(function (bar) {
-  return bar * 2;
-});
-assign(foo, [10], 5);
-console.log(foo(10));
-console.log(foo(5));
+  DefaultVector: DefaultVector
+} = require("/Users/casianorodriguezleon/campus-virtual/2122/learning/compiler-learning/babel-default-vector-npm-test/node_modules/@ull-esit-pl/babel-plugin-default-vector/src/support.js");
+let a = new DefaultVector([1, 2, 3], x => x * x);
+console.log(a[2]); // 3
+console.log(a[5]); // 25 (porque 5 * 5 = 25)
 ```
 
 If you want to save it to a file, use the `-o` option.
@@ -108,18 +104,18 @@ If you want to save it to a file, use the `-o` option.
 You can pipe the output to `node`:
 
 ```bash
-➜  babel-npm-test npx babel  example.js | node  -
-5
-10
+➜  babel-default-vector-npm-test git:(main) ✗ npx babel  example.js | node
+3
+25
 ```
 
 or alternatively, use the `-o` option to save the output to a file and then run it:
 
 ```
-➜  babel-default-vector-npm-test git:(main) npx babel  example.js -o example.cjs
+➜  babel-default-vector-npm-test git:(main) ✗ npx babel  example.js -o example.cjs
 ➜  babel-default-vector-npm-test git:(main) ✗ node example.cjs 
-5
-10
+3
+25
 ```
 
 ## References
