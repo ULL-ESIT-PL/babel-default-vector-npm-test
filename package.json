@@ -12,8 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.10.1",
-    "@ull-esit-pl/babel-plugin-default-vector": "^1.1.0",
-    "@ull-esit-pl/parser-default-vector": "^1.0.3"
+    "@ull-esit-pl/babel-plugin-default-vector": "^1.1.4",
+    "@ull-esit-pl/parser-default-vector": "^1.0.7"
   },
   "dependencies": {
     "charcodes": "^0.2.0"

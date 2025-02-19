@@ -1,3 +1,7 @@
+/*
+let array = [10, 15, 30 else i => throw new Error(`Se ha intentado acceder a la posición: ${i} que no existe`)];
+*/
+
 let array = new DefaultVector([10, 15, 30], checkUndefined=true);
 array.setElseExpression(i => {throw new Error(`Se ha intentado acceder a la posición: ${i} que no existe`)});
 
